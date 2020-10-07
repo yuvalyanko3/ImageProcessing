@@ -49,7 +49,7 @@ namespace ImagAlg
         {
             foreach (string alg in Consts.algorithms)
             {
-                string path = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\" + alg + ".dll");
+                string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\" + alg + ".dll");
                 assemblies.Add(alg, Assembly.LoadFile(path));
             }
         }
