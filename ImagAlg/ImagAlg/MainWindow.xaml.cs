@@ -47,15 +47,14 @@ namespace ImagAlg
         /// </summary>
         private void LoadAlgorithms()
         {
-            //assemblies.Add("test", Assembly.LoadFile(@"C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.dll"));
             foreach (string alg in Consts.algorithms)
             {
                 string path = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\" + alg + ".dll");
-                assemblies.Add(alg, Assembly.LoadFile(@"C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\GrayScaleAlg.dll"));
+                assemblies.Add(alg, Assembly.LoadFile(path));
             }
         }
 
-        private Bitmap ExecuteAlgorithm(string alg, string method)
+        private void ExecuteAlgorithm(string alg, string method)
         {
             try
             {
@@ -63,12 +62,20 @@ namespace ImagAlg
                 var methodInfo = type.GetMethod(Consts.RunAlgMethod);
                 if(methodInfo == null)
                 {
-                    return null;
+                    MessageBox.Show("Could not find algorithm");
+                    return;
                 }
                 var instance = Activator.CreateInstance(type);
                 var result = methodInfo.Invoke(instance, new object[] { myImage.bitmap });
-                image.Source = ConvertBitmapToImageSource((Bitmap)result);
-
+                ImageSource finalImage = ConvertBitmapToImageSource((Bitmap)result);
+                if(finalImage != null)
+                {
+                    image.Source = finalImage;
+                }
+                else
+                {
+                    MessageBox.Show("Could not convert image");
+                }
             }
             catch (ReflectionTypeLoadException ex)
             {
@@ -90,7 +97,6 @@ namespace ImagAlg
                 string errorMessage = sb.ToString();
                 MessageBox.Show(errorMessage);
             }
-            return null;
         }
 
         private ImageSource ConvertBitmapToImageSource(Bitmap map)

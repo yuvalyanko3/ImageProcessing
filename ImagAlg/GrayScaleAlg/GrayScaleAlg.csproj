@@ -54,6 +54,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /d /y "$(TargetDir)*" "$(SolutionDir)ImagAlg\bin\Debug\Plugins"</PostBuildEvent>
+    <PostBuildEvent>if not exist "$(SolutionDir)ImagAlg\bin\Debug\Plugins" mkdir "$(SolutionDir)ImagAlg\bin\Debug\Plugins"
+xcopy /d /y "$(TargetDir)*" "$(SolutionDir)ImagAlg\bin\Debug\Plugins"</PostBuildEvent>
   </PropertyGroup>
 </Project>
