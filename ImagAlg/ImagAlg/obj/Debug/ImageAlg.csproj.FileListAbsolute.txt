@@ -1,0 +1,42 @@
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe.config
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.pdb
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\MainWindow.g.cs
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\App.g.cs
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.cache
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.lref
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\MainWindow.baml
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.g.resources
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.Properties.Resources.resources
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csproj.GenerateResource.cache
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.exe
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.pdb
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csprojAssemblyReference.cache
+C:\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe.config
+C:\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe
+C:\workspace\ImagAlg\ImagAlg\bin\Debug\ImagAlg.pdb
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csprojAssemblyReference.cache
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\MainWindow.g.cs
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\App.g.cs
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.cache
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.lref
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\MainWindow.baml
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.g.resources
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.Properties.Resources.resources
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csproj.GenerateResource.cache
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.exe
+C:\workspace\ImagAlg\ImagAlg\obj\Debug\ImagAlg.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe.config
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\ImagAlg.exe
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\ImagAlg.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\MainWindow.g.cs
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\App.g.cs
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg_MarkupCompile.lref
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\MainWindow.baml
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.g.resources
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.Properties.Resources.resources
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csproj.GenerateResource.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.exe
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.pdb

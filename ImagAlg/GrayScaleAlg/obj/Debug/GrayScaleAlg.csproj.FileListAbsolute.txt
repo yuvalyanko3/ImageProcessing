@@ -1,0 +1,16 @@
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\bin\Debug\GrayScaleAlg.dll
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\bin\Debug\GrayScaleAlg.pdb
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.csprojAssemblyReference.cache
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.csproj.CopyComplete
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.dll
+C:\Users\Yuval\Dropbox (צוות שמוקט)\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.pdb
+C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\GrayScaleAlg.dll
+C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\GrayScaleAlg.pdb
+C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.dll
+C:\workspace\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.pdb
+C:\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.csprojAssemblyReference.cache
+C:\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.csproj.CopyComplete
+C:\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.dll
+C:\workspace\ImagAlg\GrayScaleAlg\obj\Debug\GrayScaleAlg.pdb
