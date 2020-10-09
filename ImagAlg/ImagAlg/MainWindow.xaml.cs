@@ -100,6 +100,10 @@ namespace ImagAlg
             {
                 int index = pluginCombo.SelectedIndex;
                 loadBtn.IsEnabled = false;
+                if(myImage.ProcessedImage != null)
+                {
+                    image.Source = ConvertBitmapToImageSource(myImage.Bitmap);
+                }
                 worker.RunWorkerAsync(index);
             }
             else
@@ -132,7 +136,7 @@ namespace ImagAlg
                         return;
                     }
                     var instance = Activator.CreateInstance(type);
-                    Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap });
+                    Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap.Clone() });
                     if (result != null)
                     {
                         myImage.ProcessedImage = result;

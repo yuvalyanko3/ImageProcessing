@@ -1,0 +1,8 @@
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\bin\Debug\Invert.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\bin\Debug\Invert.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\obj\Debug\InvertAlg.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\obj\Debug\InvertAlg.csproj.CopyComplete
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\obj\Debug\Invert.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\InvertAlg\obj\Debug\Invert.pdb

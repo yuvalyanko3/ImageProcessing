@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlipImageAlg", "FlipImageAl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedFilterAlg", "RedFilterAlg\RedFilterAlg.csproj", "{B4C17DE3-779E-4F3B-B654-333595721000}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvertAlg", "InvertAlg\InvertAlg.csproj", "{9792694E-D618-4AA5-84DD-CC0CB6632073}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B4C17DE3-779E-4F3B-B654-333595721000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C17DE3-779E-4F3B-B654-333595721000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C17DE3-779E-4F3B-B654-333595721000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9792694E-D618-4AA5-84DD-CC0CB6632073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9792694E-D618-4AA5-84DD-CC0CB6632073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9792694E-D618-4AA5-84DD-CC0CB6632073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9792694E-D618-4AA5-84DD-CC0CB6632073}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
