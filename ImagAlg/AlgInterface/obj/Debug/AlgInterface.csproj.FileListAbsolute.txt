@@ -8,3 +8,8 @@ C:\workspace\ImagAlg\AlgInterface\bin\Debug\AlgInterface.pdb
 C:\workspace\ImagAlg\AlgInterface\obj\Debug\AlgInterface.csprojAssemblyReference.cache
 C:\workspace\ImagAlg\AlgInterface\obj\Debug\AlgInterface.dll
 C:\workspace\ImagAlg\AlgInterface\obj\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\AlgInterface\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\AlgInterface\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\AlgInterface\obj\Debug\AlgInterface.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\AlgInterface\obj\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\AlgInterface\obj\Debug\AlgInterface.pdb

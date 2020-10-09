@@ -1,0 +1,8 @@
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\obj\Debug\RedFilterAlg.csproj.CopyComplete
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\obj\Debug\RedFilterAlg.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\bin\Debug\RedFilter.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\bin\Debug\RedFilter.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\obj\Debug\RedFilter.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\RedFilterAlg\obj\Debug\RedFilter.pdb

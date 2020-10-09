@@ -80,7 +80,7 @@ namespace ImagAlg
                 {
                     Assembly assembly = Assembly.LoadFile(file);
                     assemblies.Add(assembly);
-                    pluginNames.Add(assembly.GetName().Name);
+                    pluginNames.Add(SeperateWords(assembly.GetName().Name));
                 }
                 asmDef.Dispose();
             }
@@ -192,6 +192,14 @@ namespace ImagAlg
         {
             loadBtn.IsEnabled = true;
             pluginCombo.SelectedIndex = -1;
+        }
+
+        /// <summary>
+        /// Helper method. Adds a space before every capital letter (except the first one)
+        /// </summary>
+        private string SeperateWords(string str)
+        {
+            return string.Concat(str.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         }
     }
 }

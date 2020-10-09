@@ -8,6 +8,6 @@ namespace AlgInterface
         /// <summary>
         /// Manipulate the pixel data of originalImage
         /// </summary>
-        Bitmap RunAlgorithm(Bitmap originalImage);
+        Bitmap RunAlgorithm(Bitmap originalImage); 
     }
 }

@@ -1,8 +1,8 @@
-C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\FlipImageAlg.dll
-C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\FlipImageAlg.pdb
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\AlgInterface.dll
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\AlgInterface.pdb
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImageAlg.csproj.CopyComplete
-C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImageAlg.dll
-C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImageAlg.pdb
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImageAlg.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\FlipImage.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\bin\Debug\FlipImage.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImage.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\FlipImageAlg\obj\Debug\FlipImage.pdb
