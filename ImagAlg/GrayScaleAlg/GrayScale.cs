@@ -9,7 +9,7 @@ using AlgInterface;
 
 namespace GrayScaleAlg
 {
-    public class GrayScale : IImageProcessingAlgorithm
+    public class Grayscale : IImageProcessingAlgorithm
     {
         public Bitmap RunAlgorithm(Bitmap originalImage)
         {
@@ -28,7 +28,7 @@ namespace GrayScaleAlg
                        new float[] {.11f, .11f, .11f, 0, 0},
                        new float[] {0, 0, 0, 1, 0},
                        new float[] {0, 0, 0, 0, 1}
-                   });
+                   }); 
 
                 //create some image attributes
                 using (ImageAttributes attributes = new ImageAttributes())

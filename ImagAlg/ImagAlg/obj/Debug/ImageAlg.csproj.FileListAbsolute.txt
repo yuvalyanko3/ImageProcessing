@@ -40,3 +40,14 @@ C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAl
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csproj.GenerateResource.cache
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.exe
 C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImagAlg.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\obj\Debug\ImageAlg.csproj.CopyComplete
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Mdb.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Pdb.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\ImagAlg\bin\Debug\Mono.Cecil.Rocks.pdb

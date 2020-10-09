@@ -1,0 +1,8 @@
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\bin\Debug\Grayscale.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\bin\Debug\Grayscale.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\bin\Debug\AlgInterface.pdb
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\obj\Debug\Grayscale.csprojAssemblyReference.cache
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\obj\Debug\Grayscale.csproj.CopyComplete
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\obj\Debug\Grayscale.dll
+C:\Users\Yuval\Documents\GitHub\ImageProcessing\ImagAlg\GrayScaleAlg\obj\Debug\Grayscale.pdb

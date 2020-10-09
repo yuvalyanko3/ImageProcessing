@@ -9,6 +9,7 @@
     <Grid>
         <Image Name="image" HorizontalAlignment="Left" Height="301" Margin="168,28,0,0" VerticalAlignment="Top" Width="355"/>
         <Button Content="Load Image" HorizontalAlignment="Left" Margin="98,355,0,0" VerticalAlignment="Top" Width="143" Click="LoadImage_Clicked"/>
+        <ComboBox Name="pluginCombo" ItemsSource="{Binding pluginNames}" HorizontalAlignment="Left" Margin="475,353,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.106,0.8"/>
 
     </Grid>
 </Window>

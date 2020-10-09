@@ -10,6 +10,8 @@ using System.IO;
 using System.Reflection;
 using ImagAlg.Model;
 using ImagAlg.Utils;
+using AlgInterface;
+using System.Linq;
 
 namespace ImagAlg
 {
@@ -19,14 +21,19 @@ namespace ImagAlg
     public partial class MainWindow : Window
     {
         MyImage myImage;
-        Dictionary<String, Assembly> assemblies;
+        List<Assembly> assemblies;
+        public List<string> pluginNames { get; set; }
+
         public MainWindow()
         {
 
             InitializeComponent();
-            assemblies = new Dictionary<string, Assembly>();
+            assemblies = new List<Assembly>();
+            pluginNames = new List<string>();
             LoadAlgorithms();
+            AddPluginsToComboBox();
             myImage = null;
+            DataContext = this;
         }
 
         private void LoadImage_Clicked(object sender, RoutedEventArgs e)
@@ -39,7 +46,7 @@ namespace ImagAlg
                 image.Source = new BitmapImage(new Uri(fileDialog.FileName));
                 myImage = new MyImage(new Bitmap(fileDialog.FileName));
             }
-            ExecuteAlgorithm("GrayScaleAlg", "GrayScale");
+            ExecuteAlgorithm();
         }
 
         /// <summary>
@@ -47,18 +54,36 @@ namespace ImagAlg
         /// </summary>
         private void LoadAlgorithms()
         {
-            foreach (string alg in Consts.algorithms)
+
+            string pluginsPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\");
+            string[] files = Directory.GetFiles(pluginsPath, "*.dll");
+            foreach (string file in files)
             {
-                string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\" + alg + ".dll");
-                assemblies.Add(alg, Assembly.LoadFile(path));
+                //Read assembly info without loading it into memory.
+                var asmDef = Mono.Cecil.AssemblyDefinition.ReadAssembly(file);
+                if(IsAssemblyImplementsInterface(asmDef))
+                {
+                    Assembly assembly = Assembly.LoadFile(file);
+                    assemblies.Add(assembly);
+                    pluginNames.Add(assembly.GetName().Name);
+                }
             }
         }
 
-        private void ExecuteAlgorithm(string alg, string method)
+        private bool IsAssemblyImplementsInterface(Mono.Cecil.AssemblyDefinition asm)
+        {
+            Type interfaceType = typeof(IImageProcessingAlgorithm);
+            // check if assembly contains a class that implements the IImageProcessingAlgorithm interface
+            return asm.Modules.Any(m => m.Types.Any(t => t.IsClass &&
+                    t.Interfaces.Any(i => i.InterfaceType.FullName.Equals(interfaceType.FullName)))); 
+        }
+
+        private void ExecuteAlgorithm()
         {
             try
             {
-                var type = assemblies[alg].GetType($"{alg}.{method}");
+
+                /*var type = assemblies[alg].GetType($"{alg}.{method}");
                 var methodInfo = type.GetMethod(Consts.RunAlgMethod);
                 if(methodInfo == null)
                 {
@@ -75,7 +100,7 @@ namespace ImagAlg
                 else
                 {
                     MessageBox.Show("Could not convert image");
-                }
+                } */
             }
             catch (ReflectionTypeLoadException ex)
             {
@@ -97,6 +122,11 @@ namespace ImagAlg
                 string errorMessage = sb.ToString();
                 MessageBox.Show(errorMessage);
             }
+        }
+
+        private void AddPluginsToComboBox()
+        {
+            
         }
 
         private ImageSource ConvertBitmapToImageSource(Bitmap map)

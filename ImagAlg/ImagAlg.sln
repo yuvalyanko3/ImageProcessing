@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAlg", "ImagAlg\ImageAl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgInterface", "AlgInterface\AlgInterface.csproj", "{FDC011C4-CE50-4CFF-9FFE-6A4880139B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrayScaleAlg", "GrayScaleAlg\GrayScaleAlg.csproj", "{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grayscale", "GrayScaleAlg\Grayscale.csproj", "{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
