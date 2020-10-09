@@ -14,7 +14,6 @@ using AlgInterface;
 using System.Linq;
 using System.Windows.Controls;
 using System.ComponentModel;
-using System.Threading;
 
 namespace ImagAlg
 {
@@ -166,6 +165,13 @@ namespace ImagAlg
                 }
                 string errorMessage = sb.ToString();
                 MessageBox.Show(errorMessage);
+            }
+            catch (Exception ex)
+            {
+                if(ex is AmbiguousMatchException || ex is ArgumentNullException)
+                {
+                    MessageBox.Show("Could not find algorithm");
+                }
             }
         }
 
