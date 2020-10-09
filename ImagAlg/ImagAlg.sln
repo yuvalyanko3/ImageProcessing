@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgInterface", "AlgInterfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grayscale", "GrayScaleAlg\Grayscale.csproj", "{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlipImageAlg", "FlipImageAlg\FlipImageAlg.csproj", "{69ADDF05-FFE7-43C2-B6FE-E341016359BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFA1EFE4-B02E-47B7-B06E-6E69AC23C56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69ADDF05-FFE7-43C2-B6FE-E341016359BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69ADDF05-FFE7-43C2-B6FE-E341016359BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69ADDF05-FFE7-43C2-B6FE-E341016359BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69ADDF05-FFE7-43C2-B6FE-E341016359BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

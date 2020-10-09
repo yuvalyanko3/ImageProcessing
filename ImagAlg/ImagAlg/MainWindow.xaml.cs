@@ -96,8 +96,17 @@ namespace ImagAlg
 
         private void ExecuteAlgorithm(object sender, SelectionChangedEventArgs e)
         {
-            int index = pluginCombo.SelectedIndex;
-            worker.RunWorkerAsync(index);
+            if(myImage != null)
+            {
+                int index = pluginCombo.SelectedIndex;
+                loadBtn.IsEnabled = false;
+                worker.RunWorkerAsync(index);
+            }
+            else
+            {
+                RefreshComponents();
+            }
+
         }
 
         private void Worker_ExecuteAlg(object sender, DoWorkEventArgs e)
@@ -105,30 +114,33 @@ namespace ImagAlg
             try
             {
                 int index = (int)e.Argument;
-                Type interfaceType = typeof(IImageProcessingAlgorithm);
-                //get Type who implements the intefrace IImageProcessingAlgorithm
-                var types = assemblies[index].GetTypes().Where(p => interfaceType.IsAssignableFrom(p));
-                Type type = null;
-                MethodInfo methodInfo = null;
-                foreach (var t in types)
+                if(index > -1)
                 {
-                    methodInfo = t.GetMethod(Consts.RunAlgMethod);
-                    type = t;
-                }
-                if (methodInfo == null || type == null)
-                {
-                    MessageBox.Show("Could not find algorithm");
-                    return;
-                }
-                var instance = Activator.CreateInstance(type);
-                Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap });
-                if (result != null)
-                {
-                    myImage.ProcessedImage = result;
-                }
-                else
-                {
-                    MessageBox.Show("Could not convert image");
+                    Type interfaceType = typeof(IImageProcessingAlgorithm);
+                    //get the Type who implements the intefrace IImageProcessingAlgorithm
+                    var types = assemblies[index].GetTypes().Where(p => interfaceType.IsAssignableFrom(p));
+                    Type type = null;
+                    MethodInfo methodInfo = null;
+                    foreach (var t in types)
+                    {
+                        methodInfo = t.GetMethod(Consts.RunAlgMethod);
+                        type = t;
+                    }
+                    if (methodInfo == null || type == null)
+                    {
+                        MessageBox.Show("Could not find algorithm");
+                        return;
+                    }
+                    var instance = Activator.CreateInstance(type);
+                    Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap });
+                    if (result != null)
+                    {
+                        myImage.ProcessedImage = result;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Could not convert image");
+                    }
                 }
             }
             catch (ReflectionTypeLoadException ex)
@@ -159,6 +171,7 @@ namespace ImagAlg
             {
                 image.Source = ConvertBitmapToImageSource(myImage.ProcessedImage);
             }
+            loadBtn.IsEnabled = true;
         }
 
         private ImageSource ConvertBitmapToImageSource(Bitmap map)
@@ -173,6 +186,12 @@ namespace ImagAlg
             {
                 return null;
             }
+        }
+
+        private void RefreshComponents()
+        {
+            loadBtn.IsEnabled = true;
+            pluginCombo.SelectedIndex = -1;
         }
     }
 }
