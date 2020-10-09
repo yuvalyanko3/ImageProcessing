@@ -12,6 +12,9 @@ using ImagAlg.Model;
 using ImagAlg.Utils;
 using AlgInterface;
 using System.Linq;
+using System.Windows.Controls;
+using System.ComponentModel;
+using System.Threading;
 
 namespace ImagAlg
 {
@@ -20,9 +23,11 @@ namespace ImagAlg
     /// </summary>
     public partial class MainWindow : Window
     {
-        MyImage myImage;
-        List<Assembly> assemblies;
+        private MyImage myImage;
+        private List<Assembly> assemblies;
         public List<string> pluginNames { get; set; }
+
+        private BackgroundWorker worker;
 
         public MainWindow()
         {
@@ -30,10 +35,21 @@ namespace ImagAlg
             InitializeComponent();
             assemblies = new List<Assembly>();
             pluginNames = new List<string>();
+            InitWorker();
             LoadAlgorithms();
-            AddPluginsToComboBox();
             myImage = null;
             DataContext = this;
+            pluginCombo.SelectionChanged += ExecuteAlgorithm;
+        }
+
+        private void InitWorker()
+        {
+            if (worker == null)
+            {
+                worker = new BackgroundWorker();
+            }
+            worker.DoWork += Worker_ExecuteAlg;
+            worker.RunWorkerCompleted += Worker_ExecuteCompleted;
         }
 
         private void LoadImage_Clicked(object sender, RoutedEventArgs e)
@@ -46,7 +62,6 @@ namespace ImagAlg
                 image.Source = new BitmapImage(new Uri(fileDialog.FileName));
                 myImage = new MyImage(new Bitmap(fileDialog.FileName));
             }
-            ExecuteAlgorithm();
         }
 
         /// <summary>
@@ -67,6 +82,7 @@ namespace ImagAlg
                     assemblies.Add(assembly);
                     pluginNames.Add(assembly.GetName().Name);
                 }
+                asmDef.Dispose();
             }
         }
 
@@ -78,29 +94,42 @@ namespace ImagAlg
                     t.Interfaces.Any(i => i.InterfaceType.FullName.Equals(interfaceType.FullName)))); 
         }
 
-        private void ExecuteAlgorithm()
+        private void ExecuteAlgorithm(object sender, SelectionChangedEventArgs e)
+        {
+            int index = pluginCombo.SelectedIndex;
+            worker.RunWorkerAsync(index);
+        }
+
+        private void Worker_ExecuteAlg(object sender, DoWorkEventArgs e)
         {
             try
             {
-
-                /*var type = assemblies[alg].GetType($"{alg}.{method}");
-                var methodInfo = type.GetMethod(Consts.RunAlgMethod);
-                if(methodInfo == null)
+                int index = (int)e.Argument;
+                Type interfaceType = typeof(IImageProcessingAlgorithm);
+                //get Type who implements the intefrace IImageProcessingAlgorithm
+                var types = assemblies[index].GetTypes().Where(p => interfaceType.IsAssignableFrom(p));
+                Type type = null;
+                MethodInfo methodInfo = null;
+                foreach (var t in types)
+                {
+                    methodInfo = t.GetMethod(Consts.RunAlgMethod);
+                    type = t;
+                }
+                if (methodInfo == null || type == null)
                 {
                     MessageBox.Show("Could not find algorithm");
                     return;
                 }
                 var instance = Activator.CreateInstance(type);
-                var result = methodInfo.Invoke(instance, new object[] { myImage.bitmap });
-                ImageSource finalImage = ConvertBitmapToImageSource((Bitmap)result);
-                if(finalImage != null)
+                Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap });
+                if (result != null)
                 {
-                    image.Source = finalImage;
+                    myImage.ProcessedImage = result;
                 }
                 else
                 {
                     MessageBox.Show("Could not convert image");
-                } */
+                }
             }
             catch (ReflectionTypeLoadException ex)
             {
@@ -124,9 +153,12 @@ namespace ImagAlg
             }
         }
 
-        private void AddPluginsToComboBox()
+        private void Worker_ExecuteCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
+            if(myImage.ProcessedImage != null)
+            {
+                image.Source = ConvertBitmapToImageSource(myImage.ProcessedImage);
+            }
         }
 
         private ImageSource ConvertBitmapToImageSource(Bitmap map)

@@ -11,8 +11,9 @@ namespace ImagAlg.Model
     {
         public MyImage(Bitmap bitmap)
         {
-            this.bitmap = bitmap;
+            this.Bitmap = bitmap;
         }
-        public Bitmap bitmap { get; set; }
+        public Bitmap Bitmap { get; set; }
+        public Bitmap ProcessedImage { get; set; }
     }
 }
