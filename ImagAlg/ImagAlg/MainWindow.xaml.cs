@@ -22,9 +22,9 @@ namespace ImagAlg
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MyImage myImage;
-        private List<Assembly> assemblies;
-        public List<string> pluginNames { get; set; }
+        private UserImage userImage;
+        public List<string> pluginNames  { get; set; }
+    private Dictionary<string, Type> algorithms = new Dictionary<string, Type>(); 
 
         private BackgroundWorker worker;
 
@@ -32,11 +32,7 @@ namespace ImagAlg
         {
 
             InitializeComponent();
-            assemblies = new List<Assembly>();
-            pluginNames = new List<string>();
-            InitWorker();
             LoadAlgorithms();
-            myImage = null;
             DataContext = this;
             pluginCombo.SelectionChanged += ExecuteAlgorithm;
         }
@@ -53,13 +49,15 @@ namespace ImagAlg
 
         private void LoadImage_Clicked(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg;*.jpeg;*.jpe;*.jfif;*.png";
-            bool? imageSelected = fileDialog.ShowDialog();
-            if (imageSelected == true)
+            OpenFileDialog fileDialog = new OpenFileDialog()
+            {
+                Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg;*.jpeg;*.jpe;*.jfif;*.png"
+            };
+
+            if (fileDialog.ShowDialog() ?? true)
             {
                 image.Source = new BitmapImage(new Uri(fileDialog.FileName));
-                myImage = new MyImage(new Bitmap(fileDialog.FileName));
+                userImage = new UserImage(fileDialog.FileName);
             }
         }
 
@@ -71,6 +69,7 @@ namespace ImagAlg
 
             string pluginsPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Plugins\");
             string[] files = Directory.GetFiles(pluginsPath, "*.dll");
+            pluginNames = new List<string>();
             foreach (string file in files)
             {
                 //Read assembly info without loading it into memory.
@@ -78,8 +77,10 @@ namespace ImagAlg
                 if(IsAssemblyImplementsInterface(asmDef))
                 {
                     Assembly assembly = Assembly.LoadFile(file);
-                    assemblies.Add(assembly);
-                    pluginNames.Add(SeperateWords(assembly.GetName().Name));
+                    Type type = assembly.GetTypes().First();
+                    string name = SeperateWords(assembly.GetName().Name);
+                    algorithms.Add(name, type);
+                    pluginNames.Add(name);
                 }
                 asmDef.Dispose();
             }
@@ -95,15 +96,22 @@ namespace ImagAlg
 
         private void ExecuteAlgorithm(object sender, SelectionChangedEventArgs e)
         {
-            if(myImage != null)
+            if(userImage != null)
             {
                 int index = pluginCombo.SelectedIndex;
-                loadBtn.IsEnabled = false;
-                if(myImage.ProcessedImage != null)
+                if(index > -1)
                 {
-                    image.Source = ConvertBitmapToImageSource(myImage.Bitmap);
+                    loadBtn.IsEnabled = false;
+                    if (userImage.ProcessedImage != null)
+                    {
+                        image.Source = ConvertBitmapToImageSource(userImage.Bitmap);
+                    }
+                    if (worker == null)
+                    {
+                        InitWorker();
+                    }
+                    worker.RunWorkerAsync(pluginCombo.SelectedItem.ToString());
                 }
-                worker.RunWorkerAsync(index);
             }
             else
             {
@@ -116,34 +124,18 @@ namespace ImagAlg
         {
             try
             {
-                int index = (int)e.Argument;
-                if(index > -1)
+                string alg = (string)e.Argument;
+                Type type = algorithms[alg];
+                MethodInfo methodInfo = type.GetMethod(Consts.RunAlgMethod);
+                var instance = Activator.CreateInstance(type);
+                Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { userImage.Bitmap.Clone() });
+                if (result != null)
                 {
-                    Type interfaceType = typeof(IImageProcessingAlgorithm);
-                    //get the Type who implements the intefrace IImageProcessingAlgorithm
-                    var types = assemblies[index].GetTypes().Where(p => interfaceType.IsAssignableFrom(p));
-                    Type type = null;
-                    MethodInfo methodInfo = null;
-                    foreach (var t in types)
-                    {
-                        methodInfo = t.GetMethod(Consts.RunAlgMethod);
-                        type = t;
-                    }
-                    if (methodInfo == null || type == null)
-                    {
-                        MessageBox.Show("Could not find algorithm");
-                        return;
-                    }
-                    var instance = Activator.CreateInstance(type);
-                    Bitmap result = (Bitmap)methodInfo.Invoke(instance, new object[] { myImage.Bitmap.Clone() });
-                    if (result != null)
-                    {
-                        myImage.ProcessedImage = result;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Could not convert image");
-                    }
+                    userImage.ProcessedImage = result;
+                }
+                else
+                {
+                    MessageBox.Show("Could not convert image");
                 }
             }
             catch (ReflectionTypeLoadException ex)
@@ -177,9 +169,9 @@ namespace ImagAlg
 
         private void Worker_ExecuteCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if(myImage.ProcessedImage != null)
+            if(userImage.ProcessedImage != null)
             {
-                image.Source = ConvertBitmapToImageSource(myImage.ProcessedImage);
+                image.Source = ConvertBitmapToImageSource(userImage.ProcessedImage);
             }
             loadBtn.IsEnabled = true;
         }

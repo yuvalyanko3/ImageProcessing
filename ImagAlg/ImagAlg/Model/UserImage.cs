@@ -7,12 +7,13 @@ using System.Drawing;
 
 namespace ImagAlg.Model
 {
-    class MyImage
+    class UserImage
     {
-        public MyImage(Bitmap bitmap)
+        public UserImage(string imagePath)
         {
-            this.Bitmap = bitmap;
+            this.Bitmap = new Bitmap(imagePath);
         }
+        
         public Bitmap Bitmap { get; set; }
         public Bitmap ProcessedImage { get; set; }
     }
