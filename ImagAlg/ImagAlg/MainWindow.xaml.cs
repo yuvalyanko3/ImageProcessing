@@ -14,6 +14,8 @@ using AlgInterface;
 using System.Linq;
 using System.Windows.Controls;
 using System.ComponentModel;
+using System.Windows.Input;
+using Prism.Commands;
 
 namespace ImagAlg
 {
@@ -24,7 +26,7 @@ namespace ImagAlg
     {
         private UserImage userImage;
         public List<string> pluginNames  { get; set; }
-    private Dictionary<string, Type> algorithms = new Dictionary<string, Type>(); 
+        private Dictionary<string, Type> algorithms = new Dictionary<string, Type>(); 
 
         private BackgroundWorker worker;
 
@@ -42,9 +44,9 @@ namespace ImagAlg
             if (worker == null)
             {
                 worker = new BackgroundWorker();
+                worker.DoWork += Worker_ExecuteAlg;
+                worker.RunWorkerCompleted += Worker_ExecuteCompleted;
             }
-            worker.DoWork += Worker_ExecuteAlg;
-            worker.RunWorkerCompleted += Worker_ExecuteCompleted;
         }
 
         private void LoadImage_Clicked(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace ImagAlg
                 Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg;*.jpeg;*.jpe;*.jfif;*.png"
             };
 
-            if (fileDialog.ShowDialog() ?? true)
+            if (fileDialog.ShowDialog() == true)
             {
                 image.Source = new BitmapImage(new Uri(fileDialog.FileName));
                 userImage = new UserImage(fileDialog.FileName);
@@ -115,7 +117,7 @@ namespace ImagAlg
             }
             else
             {
-                RefreshComponents();
+                pluginCombo.SelectedIndex = -1;
             }
 
         }
@@ -190,18 +192,12 @@ namespace ImagAlg
             }
         }
 
-        private void RefreshComponents()
-        {
-            loadBtn.IsEnabled = true;
-            pluginCombo.SelectedIndex = -1;
-        }
-
         /// <summary>
         /// Helper method. Adds a space before every capital letter (except the first one)
         /// </summary>
         private string SeperateWords(string str)
         {
-            return string.Concat(str.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+            return string.Concat(str.Select(x => char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         }
     }
 }
